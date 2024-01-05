@@ -7,16 +7,22 @@ class VehiculesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
+    return Container(
+      padding: const EdgeInsets.all(
+          8.0), // Ajoute du padding autour de toutes les cartes
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          // nb de card par ligne
+          crossAxisCount: 2,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0,
+        ),
+        itemCount: Vehicules.vehicules.length,
+        // permet de créer une carte pour chaque élément
+        itemBuilder: (context, index) {
+          return VehiculeCard(Vehicules.vehicules[index]);
+        },
       ),
-      itemCount: Vehicules.vehicules.length,
-      itemBuilder: (context, index) {
-        return VehiculeCard(Vehicules.vehicules[index]);
-      },
     );
   }
 }

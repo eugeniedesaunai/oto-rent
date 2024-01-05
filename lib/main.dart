@@ -14,10 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          colorScheme: const ColorScheme.light(
-        background: Color.fromARGB(255, 226, 218, 205),
-        surface: Color.fromARGB(255, 226, 218, 205),
-      )),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+        ),
+        colorScheme: const ColorScheme.dark(
+          primary: Color.fromARGB(255, 226, 218, 205),
+          background: Color.fromARGB(255, 29, 17, 2),
+          surface: Color.fromARGB(255, 29, 17, 2),
+        ),
+        useMaterial3: true,
+      ),
       home: const VehiculePage(),
     );
   }

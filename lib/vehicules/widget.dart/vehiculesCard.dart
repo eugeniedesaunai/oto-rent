@@ -7,7 +7,10 @@ class VehiculeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // permet de récupérer la couleur définis dans le thème
+
     return Card(
+      color: Color.fromARGB(255, 24, 11, 2),
       // ajoute une ombre
       elevation: 5.0,
       // permet de définir la forme de la bordure de la carte
@@ -24,17 +27,20 @@ class VehiculeCard extends StatelessWidget {
               vehiculeData['pic'],
               // signifie que la largeur de l'image utilisera toute la largeur disponible de son conteneur parent
               width: double.infinity,
-              height: 100.0,
+              height: 90.0,
               //  ajuste l'image pour couvrir complètement le conteneur en respectant le ratio d'aspect, sans déformer l'image.
               fit: BoxFit.cover,
             ),
           ),
           Padding(
+            // ajoute un padding uniform de chaque coté
             padding: const EdgeInsets.all(8.0),
             child: Text(
               '${vehiculeData['mark']} ${vehiculeData['model']}',
-              style:
-                  const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
