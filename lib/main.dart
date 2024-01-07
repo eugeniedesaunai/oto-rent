@@ -15,12 +15,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+          bodyMedium: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
         ),
         colorScheme: const ColorScheme.dark(
-          primary: Color.fromARGB(255, 226, 218, 205),
-          background: Color.fromARGB(255, 29, 17, 2),
-          surface: Color.fromARGB(255, 29, 17, 2),
+          primary: Color.fromARGB(255, 0, 0, 0),
+          background: Color.fromARGB(255, 0, 0, 0),
+          surface: Color.fromARGB(255, 0, 0, 0),
         ),
         useMaterial3: true,
       ),
