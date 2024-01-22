@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oto_rent/components/vehiculesCard.dart';
+import 'package:oto_rent/components/vehicules_card.dart';
 import 'package:oto_rent/models/vehicule_model.dart';
 
 class VehiculesGrid extends StatelessWidget {
