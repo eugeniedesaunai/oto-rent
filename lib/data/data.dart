@@ -8,7 +8,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -20,7 +20,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Nantes',
       'price': 79.0
     },
@@ -32,7 +32,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Marseille',
       'price': 79.0
     },
@@ -44,7 +44,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -56,7 +56,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -68,7 +68,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -80,7 +80,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Nantes',
       'price': 79.0
     },
@@ -92,7 +92,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Marseille',
       'price': 79.0
     },
@@ -104,7 +104,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -116,7 +116,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -128,7 +128,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -140,7 +140,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Nantes',
       'price': 79.0
     },
@@ -152,7 +152,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Marseille',
       'price': 79.0
     },
@@ -164,7 +164,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },
@@ -176,7 +176,7 @@ abstract class Vehicules {
       'power': 110,
       'topspeed': 200,
       'pic':
-          'https://www.audi-macon.fr/content/dam/iph/generic-assets/models/a4/a4-limousine-2019/stage/4096x1280_AA4_L_191004.jpg/_jcr_content/renditions/cq5dam.thumbnail.720.406.iph.png?imwidth=720&imdensity=1',
+          'https://www.journalduluxe.fr/files/mercedes-haute-voiture_70b6b237f932ea3aaddcc781e6bd1c0a.jpeg',
       'location': 'Paris',
       'price': 79.0
     },

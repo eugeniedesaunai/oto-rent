@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:oto_rent/models/vehicule_model.dart';
 
 class VehiculeCard extends StatelessWidget {
-  final Map<String, dynamic> vehiculeData;
+  const VehiculeCard({
+    super.key,
+    required this.vehicule,
+  });
 
-  const VehiculeCard(this.vehiculeData, {super.key});
+  final VehiculeModel vehicule;
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +28,19 @@ class VehiculeCard extends StatelessWidget {
             // permet de rogner l'image en fct de la box
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
-              child: Image.network(
-                vehiculeData['pic'],
-                // signifie que la largeur de l'image utilisera toute la largeur disponible de son conteneur parent
-                width: double.infinity,
-                height: 90.0,
-                //  ajuste l'image pour couvrir complètement le conteneur en respectant le ratio d'aspect, sans déformer l'image.
-                fit: BoxFit.cover,
-                color: Colors.black.withOpacity(0.5), // Filtre noir
-                colorBlendMode: BlendMode.darken,
-              ),
+              // permet de vérifier si l'image est null
+              child: vehicule.pic != null && vehicule.pic!.isNotEmpty
+                  ? Image.network(
+                      vehicule.pic!,
+                      // signifie que la largeur de l'image utilisera toute la largeur disponible de son conteneur parent
+                      width: double.infinity,
+                      height: 90.0,
+                      //  ajuste l'image pour couvrir complètement le conteneur en respectant le ratio d'aspect, sans déformer l'image.
+                      fit: BoxFit.cover,
+                      color: Colors.black.withOpacity(0.5), // Filtre noir
+                      colorBlendMode: BlendMode.darken,
+                    )
+                  : null,
             ),
           ),
           // permet de positionner le texte
@@ -47,7 +54,7 @@ class VehiculeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${vehiculeData['mark']} ${vehiculeData['model']}',
+                    '${vehicule.mark} ${vehicule.model}',
                     style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
@@ -55,11 +62,11 @@ class VehiculeCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    'Prix: ${vehiculeData['price']} €',
+                    'Prix: ${vehicule.price} €',
                     style: const TextStyle(fontSize: 14.0),
                   ),
                   Text(
-                    'Location: ${vehiculeData['location']}',
+                    'Location: ${vehicule.location}',
                     style: const TextStyle(fontSize: 14.0),
                   ),
                 ],

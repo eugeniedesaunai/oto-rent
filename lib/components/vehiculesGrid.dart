@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:oto_rent/data.dart';
-import 'package:oto_rent/vehicules/widget.dart/vehiculesCard.dart';
+import 'package:oto_rent/components/vehiculesCard.dart';
+import 'package:oto_rent/models/vehicule_model.dart';
 
 class VehiculesGrid extends StatelessWidget {
-  const VehiculesGrid({super.key});
+  const VehiculesGrid({
+    required this.vehicules,
+    super.key,
+  });
+
+  final List<VehiculeModel> vehicules;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +22,12 @@ class VehiculesGrid extends StatelessWidget {
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 8.0,
         ),
-        itemCount: Vehicules.vehicules.length,
+        itemCount: vehicules.length,
         // permet de créer une carte pour chaque élément
         itemBuilder: (context, index) {
-          return VehiculeCard(Vehicules.vehicules[index]);
+          return VehiculeCard(
+            vehicule: vehicules.elementAt(index),
+          );
         },
       ),
     );

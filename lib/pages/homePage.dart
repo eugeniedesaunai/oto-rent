@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:oto_rent/vehicules/widget.dart/vehiculesGrid.dart';
+import 'package:oto_rent/components/vehiculesGrid.dart';
+import 'package:oto_rent/data/data.dart';
+import 'package:oto_rent/models/vehicule_model.dart';
 
-class VehiculePage extends StatelessWidget {
-  const VehiculePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -38,20 +40,23 @@ class VehiculePage extends StatelessWidget {
             ),
           ),
         ),
-        body: const Column(
+        body: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text('Liste des voitures disponible',
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 25.0,
                     fontFamily: 'Montserrat',
                   )),
             ),
             Expanded(
-              child: VehiculesGrid(),
+              child: VehiculesGrid(
+                vehicules: Vehicules.vehicules
+                    .map((e) => VehiculeModel.fromJson(e))
+                    .toList(),
+              ),
             ),
-            // VehiculesGrid(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

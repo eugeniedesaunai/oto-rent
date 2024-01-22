@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oto_rent/vehicules/vehiculeList.dart';
+import 'package:oto_rent/pages/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const VehiculePage(),
+      home: const HomePage(),
     );
   }
 }
