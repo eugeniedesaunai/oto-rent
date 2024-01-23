@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:oto_rent/components/vehicule_list_view.dart';
 import 'package:oto_rent/components/vehicules_grid.dart';
-import 'package:oto_rent/data/data.dart';
 import 'package:oto_rent/models/vehicule_model.dart';
-import 'package:oto_rent/services/vehicule_services.dart';
+import 'package:oto_rent/services/vehicule_service.dart';
 
-class HomePage extends StatelessWidget {
+enum DisplayKind {
+  grid,
+  list,
+}
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  DisplayKind _displayKind = DisplayKind.grid;
+
+  @override
   Widget build(BuildContext context) {
-    List<VehiculeModel> vehiclesList = VehiculeServices.getVehicules();
     return Scaffold(
       drawer: const Drawer(
         width: 200,
@@ -42,6 +53,23 @@ class HomePage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                if (_displayKind == DisplayKind.grid) {
+                  _displayKind = DisplayKind.list;
+                } else if (_displayKind == DisplayKind.list) {
+                  _displayKind = DisplayKind.grid;
+                }
+              });
+            },
+            icon: Icon(switch (_displayKind) {
+              DisplayKind.list => Icons.grid_on,
+              DisplayKind.grid => Icons.list,
+            }),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -54,9 +82,29 @@ class HomePage extends StatelessWidget {
                 )),
           ),
           Expanded(
-            child: VehiculesGrid(
-              vehicules: vehiclesList,
-            ),
+            child:
+                // VehiculesGrid(
+                //   vehicules: VehiculeService.getVehicules(),
+                // ),
+                // SOL 1
+                // child: _displayKind == DisplayKind.list
+                //     ? VehiculeListView(
+                //         vehicules: VehiculeService.getVehicules(),
+                //       )
+                //     : _displayKind == DisplayKind.grid
+                //         ? VehiculeGridView(
+                //             vehicules: VehiculeService.getVehicules(),
+                //           )
+                //         : null,
+
+                switch (_displayKind) {
+              DisplayKind.grid => VehiculesGrid(
+                  vehicules: VehiculeService.getVehicules(),
+                ),
+              DisplayKind.list => VehiculeListView(
+                  vehicules: VehiculeService.getVehicules(),
+                )
+            },
           ),
         ],
       ),
