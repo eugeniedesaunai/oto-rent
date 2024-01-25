@@ -16,6 +16,7 @@ class VehiculesGrid extends StatelessWidget {
       padding: const EdgeInsets.all(
           8.0), // Ajoute du padding autour de toutes les cartes
       child: GridView.builder(
+        shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           // nb de card par ligne
           crossAxisCount: 2,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oto_rent/blocs/vehicule_cubit.dart';
 import 'package:oto_rent/components/vehicule_list_view.dart';
 import 'package:oto_rent/components/vehicules_grid.dart';
-import 'package:oto_rent/models/vehicule_model.dart';
-import 'package:oto_rent/services/vehicule_service.dart';
 
 enum DisplayKind {
   grid,
@@ -71,42 +71,34 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Liste des voitures disponible',
-                style: TextStyle(
-                  fontSize: 25.0,
-                  fontFamily: 'Montserrat',
-                )),
-          ),
-          Expanded(
-            child:
-                // VehiculesGrid(
-                //   vehicules: VehiculeService.getVehicules(),
-                // ),
-                // SOL 1
-                // child: _displayKind == DisplayKind.list
-                //     ? VehiculeListView(
-                //         vehicules: VehiculeService.getVehicules(),
-                //       )
-                //     : _displayKind == DisplayKind.grid
-                //         ? VehiculeGridView(
-                //             vehicules: VehiculeService.getVehicules(),
-                //           )
-                //         : null,
-
-                switch (_displayKind) {
+      body: BlocBuilder<VehiculeCubit, VehiculeState>(
+        builder: (context, state) {
+          if (state is VehiculeStateInitial) {
+            return const Center(
+              child: CircularProgressIndicator(
+                color: Colors.orange,
+              ),
+            );
+          }
+          if (state is VehiculeStateLoaded) {
+            return switch (_displayKind) {
               DisplayKind.grid => VehiculesGrid(
-                  vehicules: VehiculeService.getVehicules(),
+                  vehicules: state.vehicules,
                 ),
               DisplayKind.list => VehiculeListView(
-                  vehicules: VehiculeService.getVehicules(),
+                  vehicules: state.vehicules,
                 )
-            },
-          ),
-        ],
+            };
+          }
+          if (state is VehiculeStateError) {
+            return Center(
+              child: Text(state.message),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: false,
