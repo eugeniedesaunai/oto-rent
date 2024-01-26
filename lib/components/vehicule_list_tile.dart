@@ -14,16 +14,16 @@ class VehiculeListTile extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          debugPrint("zeroto100 => ${vehicule.zeroTo100}");
-          debugPrint("energyClass => ${vehicule.energyClass}");
+          debugPrint("zeroto100 => ${vehicule.zeroto100}");
+          debugPrint("ecoclass => ${vehicule.ecoclass}");
           debugPrint("power => ${vehicule.power}");
-          debugPrint("topspeed => ${vehicule.topSpeed}");
-          debugPrint("location => ${vehicule.location}");
+          debugPrint("topspeed => ${vehicule.topspeed}");
           debugPrint("price => ${vehicule.price}");
+          debugPrint("price => ${vehicule.location?.address}");
         },
-        leading: vehicule.pic != null
+        leading: vehicule.picture != null
             ? Image.network(
-                vehicule.pic.toString(),
+                vehicule.picture.toString(),
               )
             : null,
         title: Text(

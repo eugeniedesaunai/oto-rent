@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oto_rent/blocs/vehicule_cubit.dart';
-import 'package:oto_rent/pages/home_page.dart';
+import 'package:oto_rent/core/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         vehiculeCubit.getVehicules();
         return vehiculeCubit;
       },
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Demo',
         theme: ThemeData(
           textTheme: const TextTheme(
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: const HomePage(),
+        routerConfig: AppRouter.router,
       ),
     );
   }
