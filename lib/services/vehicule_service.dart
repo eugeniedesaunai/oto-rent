@@ -8,12 +8,31 @@ abstract class VehiculeService {
     return vehiculesAsJson.map((e) => VehiculeModel.fromJson(e)).toList();
   }
 
-  static Future<List<VehiculeModel>> getVehiculesById(int id) async {
+  // static Future<VehiculeModel> getVehiculesById(int id) async {
+  //   final vehiculesAsJson = await RemoteVehiculeDataSource.getVehicules();
+
+  //   final vehiculeList =
+  //       vehiculesAsJson.map((e) => VehiculeModel.fromJson(e)).toList();
+
+  //   return vehiculeList.where((element) => element.id == id).toList();
+  // }
+
+  static Future<VehiculeModel?> getVehiculesById(int id) async {
     final vehiculesAsJson = await RemoteVehiculeDataSource.getVehicules();
 
-    final vehiculeList =
-        vehiculesAsJson.map((e) => VehiculeModel.fromJson(e)).toList();
+    final vehiculeList = vehiculesAsJson
+        .map((e) => VehiculeModel.fromJson(e))
+        .where((element) => element.id == id)
+        .toList();
 
-    return getVehicules();
+    return vehiculeList.isNotEmpty ? vehiculeList[0] : null;
+  }
+
+  static Future<List<VehiculeModel>> getVehiculesFromAgency(
+      int agencyId) async {
+    final allAgencies = await getVehicules();
+    return allAgencies
+        .where((element) => element.location?.id == agencyId)
+        .toList();
   }
 }

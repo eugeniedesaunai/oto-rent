@@ -13,7 +13,7 @@ abstract class RemoteAgencieDataSource {
 
     // permet de decode le json
     final agenciesList = jsonDecode(response.body) as List<dynamic>;
-    print(agenciesList);
+
     return agenciesList.map((e) => e as Map<String, dynamic>).toList();
   }
 }

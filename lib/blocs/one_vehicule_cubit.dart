@@ -20,14 +20,20 @@ class VehiculeStateError extends VehiculeState {
   final String message;
 }
 
-class OneVehiculeCubit extends Cubit<VehiculeState>(int id) {
-  OneVehiculeCubit() : super(VehiculeStateInitial(), id);
+class OneVehiculeCubit extends Cubit<VehiculeState> {
+  OneVehiculeCubit() : super(VehiculeStateInitial());
 
-  Future<void> getVehicules() async {
+  Future<void> getVehicules(int id) async {
     emit(VehiculeStateLoading());
     try {
       final vehicule = await VehiculeService.getVehiculesById(id);
-      emit(VehiculeStateLoaded(vehicule: vehicule));
+
+      if (vehicule != null) {
+        emit(VehiculeStateLoaded(vehicule: vehicule));
+      } else {
+        emit(VehiculeStateError(
+            message: "Aucun véhicule trouvé pour l'ID spécifié"));
+      }
     } catch (e) {
       emit(VehiculeStateError(message: e.toString()));
     }

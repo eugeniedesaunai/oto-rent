@@ -13,32 +13,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<VehiculeCubit>(
-      // sert à lancer un builder même si il est pas instancier
-      // lazy: false,
-      create: (_) {
-        final vehiculeCubit = VehiculeCubit();
-        vehiculeCubit.getVehicules();
-        return vehiculeCubit;
-      },
-      child: MaterialApp.router(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          textTheme: const TextTheme(
-            bodyMedium: TextStyle(
-              fontFamily: 'Montserrat',
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
+    return MaterialApp.router(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Color.fromARGB(255, 255, 255, 255),
           ),
-          colorScheme: const ColorScheme.dark(
-            primary: Color.fromARGB(255, 0, 0, 0),
-            background: Color.fromARGB(255, 0, 0, 0),
-            surface: Color.fromARGB(255, 0, 0, 0),
-          ),
-          useMaterial3: true,
         ),
-        routerConfig: AppRouter.router,
+        colorScheme: const ColorScheme.dark(
+          primary: Color.fromARGB(255, 0, 0, 0),
+          background: Color.fromARGB(255, 0, 0, 0),
+          surface: Color.fromARGB(255, 0, 0, 0),
+        ),
+        useMaterial3: true,
       ),
+      routerConfig: AppRouter.router,
     );
   }
 }

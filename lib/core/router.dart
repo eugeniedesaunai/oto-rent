@@ -1,8 +1,10 @@
 import 'package:go_router/go_router.dart';
-import 'package:oto_rent/pages/home_page.dart';
+import 'package:oto_rent/pages/agencies_page.dart';
+import 'package:oto_rent/pages/vehicules_page.dart';
 import 'package:oto_rent/pages/vehicule_page.dart';
 
-const _initialLocation = '/';
+const _initialLocation = '/agencies';
+const _vehiculesPath = '/vehicules/:agencyId';
 
 abstract class AppRouter {
   static final router = GoRouter(
@@ -10,10 +12,22 @@ abstract class AppRouter {
     initialLocation: _initialLocation,
     routes: [
       GoRoute(
-        name: HomePage.name,
+        name: AgenciesPage.name,
         path: _initialLocation,
         builder: (context, state) {
-          return const HomePage();
+          return const AgenciesPage();
+        },
+      ),
+      GoRoute(
+        name: VehiculesPage.name,
+        path: _vehiculesPath,
+        builder: (context, state) {
+          final agencyIdAsString = state.pathParameters['agencyId'];
+          final agencyId =
+              agencyIdAsString != null ? int.parse(agencyIdAsString) : -1;
+          return VehiculesPage(
+            agencyId: agencyId,
+          );
         },
       ),
       GoRoute(
@@ -23,19 +37,6 @@ abstract class AppRouter {
           return VehiculePage(id: state.pathParameters['id']);
         },
       ),
-      // GoRoute(
-      //     name: IngredientPage.name,
-      //     path: '/ingredient/:id',
-      //     builder: (context, state) {
-      //       final id = state.pathParameters['id']!;
-      //       final category = IngredientCategory.values.firstWhere(
-      //         (element) => element.name == id,
-      //         orElse: () => IngredientCategory.none,
-      //       );
-      //       return IngredientPage(
-      //         ingredientCategory: category,
-      //       );
-      //     }),
     ],
   );
 }
