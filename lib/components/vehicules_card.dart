@@ -17,7 +17,6 @@ class VehiculeCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        print(vehicule.id.toString());
         context.pushNamed(VehiculePage.name,
             pathParameters: {'id': vehicule.id.toString()});
       },

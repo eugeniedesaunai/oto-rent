@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-// const _url = "https://291b888e3d1e465e874ee68af5c44532.api.mockbin.io/";
-const _url = "http://eugeniedesaunai-server.eddi.cloud:3000/vehicles";
+const _url = "https://ac596f74e2904b0aa5a96540088b6d0a.api.mockbin.io/";
+//const _url = "http://eugeniedesaunai-server.eddi.cloud:3000/vehicles";
 
 abstract class RemoteVehiculeDataSource {
   static Future<List<Map<String, dynamic>>> getVehicules() async {

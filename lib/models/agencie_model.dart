@@ -5,6 +5,8 @@ class AgencieModel {
     required this.address,
     required this.phone,
     required this.email,
+    this.latitude,
+    this.longitude,
   });
 
   factory AgencieModel.fromJson(Map<String, dynamic> json) => AgencieModel(
@@ -20,4 +22,25 @@ class AgencieModel {
   final String? address;
   final String? phone;
   final String? email;
+  final double? latitude;
+  final double? longitude;
+
+  AgencieModel copyWith({
+    int? id,
+    String? name,
+    String? address,
+    String? phone,
+    String? email,
+    double? latitude,
+    double? longitude,
+  }) =>
+      AgencieModel(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        address: address ?? this.address,
+        phone: phone ?? this.phone,
+        email: email ?? this.email,
+        latitude: latitude ?? this.latitude,
+        longitude: longitude ?? this.longitude,
+      );
 }
