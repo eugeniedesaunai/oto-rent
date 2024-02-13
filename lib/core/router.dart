@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:oto_rent/pages/agencies_page.dart';
+import 'package:oto_rent/pages/homa_page.dart';
 import 'package:oto_rent/pages/vehicules_page.dart';
 import 'package:oto_rent/pages/vehicule_page.dart';
 
@@ -12,10 +12,10 @@ abstract class AppRouter {
     initialLocation: _initialLocation,
     routes: [
       GoRoute(
-        name: AgenciesPage.name,
+        name: HomePage.name,
         path: _initialLocation,
         builder: (context, state) {
-          return const AgenciesPage();
+          return const HomePage();
         },
       ),
       GoRoute(

@@ -1,4 +1,12 @@
 class AgencieModel {
+  final int? id;
+  final String? name;
+  final String? address;
+  final String? phone;
+  final String? email;
+  final double? latitude;
+  final double? longitude;
+
   AgencieModel({
     required this.id,
     required this.name,
@@ -9,21 +17,15 @@ class AgencieModel {
     this.longitude,
   });
 
-  factory AgencieModel.fromJson(Map<String, dynamic> json) => AgencieModel(
-        id: json['id'] as int?,
-        name: json['name'] as String?,
-        address: json['address'] as String?,
-        phone: json['phone'] as String?,
-        email: json['email'] as String?,
-      );
-
-  final int? id;
-  final String? name;
-  final String? address;
-  final String? phone;
-  final String? email;
-  final double? latitude;
-  final double? longitude;
+  factory AgencieModel.fromJson(Map<String, dynamic> json) {
+    return AgencieModel(
+      id: json['id'] as int?,
+      name: json['name'] as String?,
+      address: json['address'] as String?,
+      phone: json['phone'] as String?,
+      email: json['email'] as String?,
+    );
+  }
 
   AgencieModel copyWith({
     int? id,
